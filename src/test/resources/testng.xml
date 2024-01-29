@@ -1,0 +1,8 @@
+<suite name="MyTestNGRunnerTest">
+    <test name="TestRunnerTest">
+        <classes>
+            <class name="awesomecucumber.runners.MyTestNGRunnerTest"/>
+        </classes>
+    </test>
+</suite>
+

@@ -18,6 +18,7 @@ public class ButtonsStepDefinition {
     }
     @Given("Go to Buttons page")
     public void goToButtonPage() {
+        System.out.println("abc" + 500);
         buttonsPage.load("buttons");
     }
 

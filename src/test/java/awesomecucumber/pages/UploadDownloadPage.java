@@ -1,14 +1,10 @@
 package awesomecucumber.pages;
 
-import org.jetbrains.annotations.NotNull;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.io.File;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 
 public class UploadDownloadPage extends BasePage {
 

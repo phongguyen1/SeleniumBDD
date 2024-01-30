@@ -69,12 +69,12 @@ public class TextBoxPage extends BasePage {
             case PDF:
                 pdfFileContent = PDFUtils.getPDFContent(filePath);
                 break;
-            case EXCEL:
+            default:
                 sheetContent = XLSXUtils.getSheetFromFilePath(filePath);
                 break;
-            default:
-                csvFileParser = CSVUltis.readDataFromCsv(filePath);
-                break;
+//            default:
+//                csvFileParser = CSVUltis.readDataFromCsv(filePath);
+//                break;
         }
     }
     public void fillCsvDataToForm() {

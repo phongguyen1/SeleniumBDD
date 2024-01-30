@@ -8,9 +8,9 @@ import java.io.FileReader;
 import java.io.Reader;
 
 public class CSVUltis {
-    @SneakyThrows
-    public static CSVParser readDataFromCsv(String url) {
-        Reader reader = new FileReader(url);
-        return new CSVParser(reader, CSVFormat.EXCEL.withHeader());
-    }
+//    @SneakyThrows
+//    public static CSVParser readDataFromCsv(String url) {
+//        Reader reader = new FileReader(url);
+//        return new CSVParser(reader, CSVFormat.EXCEL.withHeader());
+//    }
 }

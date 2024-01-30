@@ -37,8 +37,13 @@
 <!--						<suiteXmlFile>D:/Projects/TestNGSelenium/src/test/resources/testng.xml</suiteXmlFile>-->
 <!--					</suiteXmlFiles>-->
 					<argLine>
+						-Dfile.encoding=UTF-8
 						-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
 					</argLine>
+					<reportsDirectory>target/test-output</reportsDirectory>
+					<systemPropertyVariables>
+						<allure.results.directory>target/allure-results</allure.results.directory>
+					</systemPropertyVariables>
 				</configuration>
 				<dependencies>
 					<dependency>
@@ -62,10 +67,22 @@
 	</build>
 
 	<dependencies>
+		<!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-cucumber7-jvm -->
+		<dependency>
+			<groupId>io.qameta.allure</groupId>
+			<artifactId>allure-cucumber7-jvm</artifactId>
+			<version>2.25.0</version>
+		</dependency>
 		<!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-testng -->
 		<dependency>
 			<groupId>io.qameta.allure</groupId>
 			<artifactId>allure-testng</artifactId>
+			<version>2.25.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-attachments -->
+		<dependency>
+			<groupId>io.qameta.allure</groupId>
+			<artifactId>allure-attachments</artifactId>
 			<version>2.25.0</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
@@ -197,7 +214,7 @@
         <dependency>
             <groupId>org.jetbrains</groupId>
             <artifactId>annotations</artifactId>
-            <version>RELEASE</version>
+            <version>24.1.0</version>
             <scope>compile</scope>
         </dependency>
 		<!-- https://mvnrepository.com/artifact/org.apache.pdfbox/pdfbox -->

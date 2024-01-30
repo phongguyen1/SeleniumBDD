@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                bat 'mvn test -Dcucumber.filter.tags=@demo'
+                bat 'mvn test -Dcucumber.filter.tags=@run'
             }
             post {
                 // If Maven was able to run the tests, even if some of the test

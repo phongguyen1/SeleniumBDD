@@ -10,8 +10,7 @@ import org.testng.annotations.DataProvider;
 				"me.jvt.cucumber.report.PrettyReports:target/cucumber/"
 		},
 		 glue = {"awesomecucumber.customtype", "awesomecucumber.stepdefinitions", "awesomecucumber.hooks"},
-		features = "src/test/resources/features",
-		tags = "@run"
+		features = "src/test/resources/features"
 )
 public class MyTestNGRunnerTest extends AbstractTestNGCucumberTests {
 	@Override

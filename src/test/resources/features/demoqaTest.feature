@@ -36,6 +36,7 @@ Feature: Text Box Page
 #      Then Tables has new data
 #
 #      Buttons
+    @staging
     Scenario: go to Buttons page
       Given Go to Buttons page
       When I click "double click me" button
@@ -44,14 +45,15 @@ Feature: Text Box Page
       Then Check Click Mess content
 #
 ##      LinksPage
-#  Scenario: go to Links page
-#    Given Go to Links page
-#    When I click "Home" Link
-#    Then Browser create a new tab url
-#    When I click "Created" link
-#    Then I got status 201
-#    When I click "Bad request" link
-#    Then I got status 400
+    @dev
+  Scenario: go to Links page
+    Given Go to Links page
+    When I click "Home" Link
+    Then Browser create a new tab url
+    When I click "Created" link
+    Then I got status 201
+    When I click "Bad request" link
+    Then I got status 400
 #
 ##    Broken Links Page
 #  Scenario: test image

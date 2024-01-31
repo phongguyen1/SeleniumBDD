@@ -1,8 +1,5 @@
 pipeline {
     agent any
-    parameters {
-        choice(name: 'BUILD_ENV', choices: ['dev', 'staging', 'main'], description: 'Which environment to build')
-    }
     stages {
         stage('Build') {
             steps {
@@ -19,19 +16,19 @@ pipeline {
             steps {
                 script {
                     if (isUnix()) {
-                        if (params.BUILD_ENV == 'dev') {
+                        if (env.BRANCH_NAME == 'dev') {
                             sh 'mvn test -Dcucumber.filter.tags=@dev'
-                        } else if (params.BUILD_ENV == 'staging') {
+                        } else if (env.BRANCH_NAME == 'staging') {
                             sh 'mvn test -Dcucumber.filter.tags=@staging'
-                        } else if (params.BUILD_ENV == 'main') {
+                        } else if (env.BRANCH_NAME == 'main') {
                             sh 'mvn test -Dcucumber.filter.tags=@main'
                         }
                     } else {
-                        if (params.BUILD_ENV == 'dev') {
+                        if (env.BRANCH_NAME == 'dev') {
                             bat 'mvn test -Dcucumber.filter.tags=@dev'
-                        } else if (params.BUILD_ENV == 'staging') {
+                        } else if (env.BRANCH_NAME == 'staging') {
                             bat 'mvn test -Dcucumber.filter.tags=@staging'
-                        } else if (params.BUILD_ENV == 'main') {
+                        } else if (env.BRANCH_NAME == 'main') {
                             bat 'mvn test -Dcucumber.filter.tags=@main'
                         }
                     }

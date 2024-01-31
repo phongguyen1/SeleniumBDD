@@ -45,15 +45,15 @@ Feature: Text Box Page
       Then Check Click Mess content
 #
 ##      LinksPage
-    @dev
-  Scenario: go to Links page
-    Given Go to Links page
-    When I click "Home" Link
-    Then Browser create a new tab url
-    When I click "Created" link
-    Then I got status 201
-    When I click "Bad request" link
-    Then I got status 400
+#    @dev
+#  Scenario: go to Links page
+#    Given Go to Links page
+#    When I click "Home" Link
+#    Then Browser create a new tab url
+#    When I click "Created" link
+#    Then I got status 201
+#    When I click "Bad request" link
+#    Then I got status 400
 #
 ##    Broken Links Page
 #  Scenario: test image
@@ -81,14 +81,15 @@ Feature: Text Box Page
 #    And 3rd button appear
 #
 ##    Practice Form page
-#  Scenario: test Practice form page
-#    Given Go to Practice form page
-#    When I fill student registration form
-#      | firstName     | lastName      | email               | gender | mobile     | dateOfBirth | subjects            | hobbies       | picture                                         | currentAddress      | state | city  |
-#      | testFirstName | testLastName  | testEmail@gmail.com | Female |1234567890  | 18 Jan 1992 | Maths, Arts, Hindi  | Sports, Music | C:\\Users\\ndphong1\\Downloads\\sampleFile.jpeg | testCurrentAddress  | NCR   | Delhi |
-#    And I Click submit
-#    Then Show modal
-#    And Data is correct
+  @dev
+  Scenario: test Practice form page
+    Given Go to Practice form page
+    When I fill student registration form
+      | firstName     | lastName      | email               | gender | mobile     | dateOfBirth | subjects            | hobbies       | picture                                         | currentAddress      | state | city  |
+      | testFirstName | testLastName  | testEmail@gmail.com | Female |1234567890  | 18 Jan 1992 | Maths, Arts, Hindi  | Sports, Music | C:\\Users\\ndphong1\\Downloads\\sampleFile.jpeg | testCurrentAddress  | NCR   | Delhi |
+    And I Click submit
+    Then Show modal
+    And Data is correct
 #
 ##    Browser Window
 #  Scenario: test Browser Window 1

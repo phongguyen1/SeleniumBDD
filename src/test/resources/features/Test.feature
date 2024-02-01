@@ -1,10 +1,10 @@
 # new feature
 # Tags: optional
-@main
+
 Feature: A description
 
 #    Radio button
-    @radioButton
+  @main
     Scenario Outline: Click Radio Button
       Given Go to Radio Button Page
       When Click "<radio_button_value>"

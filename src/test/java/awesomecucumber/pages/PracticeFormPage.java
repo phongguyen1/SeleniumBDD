@@ -128,7 +128,7 @@ public class PracticeFormPage extends BasePage {
         selectedDay.click();
     }
     private void removeAdsElement() {
-        List<WebElement> adsElements = driver.findElements(By.cssSelector("img[src='https://ad.plus/adplus-advertising.svg'], a#close-fixedban, iframe[id^='google_ads_iframe']"));
+        List<WebElement> adsElements = driver.findElements(By.cssSelector("img[src='https://ad.plus/adplus-advertising.svg'], a#close-fixedban"));
         JavascriptExecutor js = (JavascriptExecutor) driver;
         for (int i = 0; i < adsElements.size(); i++) {
             WebElement adsEl = adsElements.get(i);

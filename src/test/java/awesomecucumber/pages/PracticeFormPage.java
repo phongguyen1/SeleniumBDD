@@ -128,10 +128,11 @@ public class PracticeFormPage extends BasePage {
         selectedDay.click();
     }
     private void removeAdsElement() {
-        List<WebElement> adsElements = driver.findElements(By.cssSelector("img[src=\"https://ad.plus/adplus-advertising.svg], a#close-fixedban"));
+        List<WebElement> adsElements = driver.findElements(By.cssSelector("img[src=\"https://ad.plus/adplus-advertising.svg], a#close-fixedban, iframe[id^=\"google_ads_iframe\"]"));
         JavascriptExecutor js = (JavascriptExecutor) driver;
         for (int i = 0; i < adsElements.size(); i++) {
-            js.executeScript("arguments[0].remove();", adsElements.get(i));
+            WebElement adsEl = adsElements.get(i);
+            if(adsEl != null) js.executeScript("arguments[0].remove();", adsElements.get(i));
         }
     }
     public boolean isShowModal() {

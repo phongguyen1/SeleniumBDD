@@ -17,19 +17,19 @@ pipeline {
                 script {
                     if (isUnix()) {
                         if (env.BRANCH_NAME == 'dev') {
-                            sh 'mvn test -Dcucumber.filter.tags=@dev'
+                            sh 'mvn test -Dcucumber.filter.tags=@dev -Dwebdriver.driver=chrome'
                         } else if (env.BRANCH_NAME == 'staging') {
-                            sh 'mvn test -Dcucumber.filter.tags=@staging'
+                            sh 'mvn test -Dcucumber.filter.tags=@staging -Dwebdriver.driver=chrome'
                         } else if (env.BRANCH_NAME == 'main') {
-                            sh 'mvn test -Dcucumber.filter.tags=@main'
+                            sh 'mvn test -Dcucumber.filter.tags=@main -Dwebdriver.driver=chrome'
                         }
                     } else {
                         if (env.BRANCH_NAME == 'dev') {
-                            bat 'mvn test -Dcucumber.filter.tags=@dev'
+                            bat 'mvn test -Dcucumber.filter.tags=@dev -Dwebdriver.driver=chrome'
                         } else if (env.BRANCH_NAME == 'staging') {
-                            bat 'mvn test -Dcucumber.filter.tags=@staging'
+                            bat 'mvn test -Dcucumber.filter.tags=@staging -Dwebdriver.driver=chrome'
                         } else if (env.BRANCH_NAME == 'main') {
-                            bat 'mvn test -Dcucumber.filter.tags=@main'
+                            bat 'mvn test -Dcucumber.filter.tags=@main -Dwebdriver.driver=chrome'
                         }
                     }
                 }

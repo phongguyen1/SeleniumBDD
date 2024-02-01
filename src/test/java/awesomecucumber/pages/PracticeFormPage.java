@@ -112,9 +112,7 @@ public class PracticeFormPage extends BasePage {
         int month = date.getMonthValue();
         String year = Integer.toString(date.getYear());
 
-        WebElement adsElement = driver.findElement(By.cssSelector("img[src=\"https://ad.plus/adplus-advertising.svg]"));
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("return arguments[0].remove();", adsElement);
+        removeAdsElement();
 
         dateOfBirthInput.click();
         WebElement selectedYear = driver.findElement(By.cssSelector("select.react-datepicker__year-select"));
@@ -128,6 +126,13 @@ public class PracticeFormPage extends BasePage {
         String __day = day < 10 ? "0" + day : Integer.toString(day);
         WebElement selectedDay = driver.findElement(By.cssSelector(".react-datepicker__day--0" + __day + ":not(.react-datepicker__day--outside-month)"));
         selectedDay.click();
+    }
+    private void removeAdsElement() {
+        List<WebElement> adsElements = driver.findElements(By.cssSelector("img[src=\"https://ad.plus/adplus-advertising.svg], a#close-fixedban"));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        for (int i = 0; i < adsElements.size(); i++) {
+            js.executeScript("arguments[0].remove();", adsElements.get(i));
+        }
     }
     public boolean isShowModal() {
         return driver.findElement(By.cssSelector(".modal")) != null;

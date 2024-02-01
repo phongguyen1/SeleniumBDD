@@ -112,7 +112,7 @@ public class PracticeFormPage extends BasePage {
         int month = date.getMonthValue();
         String year = Integer.toString(date.getYear());
 
-        removeAdsElement();
+//        removeAdsElement();
 
         dateOfBirthInput.click();
         WebElement selectedYear = driver.findElement(By.cssSelector("select.react-datepicker__year-select"));

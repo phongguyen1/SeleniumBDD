@@ -1,6 +1,6 @@
 # new feature
 # Tags: optional
-@main
+@run
 Feature: A description
 
 #    Radio button

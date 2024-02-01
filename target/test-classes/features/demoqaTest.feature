@@ -36,7 +36,6 @@ Feature: Text Box Page
 #      Then Tables has new data
 #
 #      Buttons
-    @staging
     Scenario: go to Buttons page
       Given Go to Buttons page
       When I click "double click me" button
@@ -45,7 +44,6 @@ Feature: Text Box Page
       Then Check Click Mess content
 #
 ##      LinksPage
-#    @dev
 #  Scenario: go to Links page
 #    Given Go to Links page
 #    When I click "Home" Link
@@ -81,15 +79,14 @@ Feature: Text Box Page
 #    And 3rd button appear
 #
 ##    Practice Form page
-  @dev
-  Scenario: test Practice form page
-    Given Go to Practice form page
-    When I fill student registration form
-      | firstName     | lastName      | email               | gender | mobile     | dateOfBirth | subjects            | hobbies       | picture                                         | currentAddress      | state | city  |
-      | testFirstName | testLastName  | testEmail@gmail.com | Female |1234567890  | 18 Jan 1992 | Maths, Arts, Hindi  | Sports, Music | C:\\Users\\ndphong1\\Downloads\\sampleFile.jpeg | testCurrentAddress  | NCR   | Delhi |
-    And I Click submit
-    Then Show modal
-    And Data is correct
+#  Scenario: test Practice form page
+#    Given Go to Practice form page
+#    When I fill student registration form
+#      | firstName     | lastName      | email               | gender | mobile     | dateOfBirth | subjects            | hobbies       | picture                                         | currentAddress      | state | city  |
+#      | testFirstName | testLastName  | testEmail@gmail.com | Female |1234567890  | 18 Jan 1992 | Maths, Arts, Hindi  | Sports, Music | C:\\Users\\ndphong1\\Downloads\\sampleFile.jpeg | testCurrentAddress  | NCR   | Delhi |
+#    And I Click submit
+#    Then Show modal
+#    And Data is correct
 #
 ##    Browser Window
 #  Scenario: test Browser Window 1

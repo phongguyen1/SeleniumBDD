@@ -1,18 +1,13 @@
-def sendSuccessNoti(URL) {
-    office365ConnectorSend(
-                        status: "Build Success",
-                        webhookUrl: "${URL}",
-                        color: "00ff00",
-                        message: "Build successfully"
-                    )
-}
+def sendTeamsNoti(URL) {
+    def STATUS = currentBuild.resultIsBetterOrEqualTo('SUCCESS') ? 'SUCCESS' : 'FAILURE'
+    def COLOR = STATUS == 'SUCCESS' ? '00ff00' : 'ff4000'
+    def MESSAGE = STATUS == 'SUCCESS' ? 'Build successfully' : 'The build has failed, please check build logs'
 
-def sendFailureNoti(URL) {
     office365ConnectorSend(
-                        status: "Build Failed",
+                        status: "${env.STAGE_NAME} ${STATUS}",
                         webhookUrl: "${URL}",
-                        color: "ff4000",
-                        message: "The build has failed, please check build logs"
+                        color: "${COLOR}",
+                        message: "${MESSAGE}"
                     )
 }
 def teams_connectors_url = "https://everisgroup.webhook.office.com/webhookb2/032c533c-afa5-4a5a-9636-772cb4643fa5@3048dc87-43f0-4100-9acb-ae1971c79395/JenkinsCI/ebf089a22af74c6fa80823e277150508/5c631738-f567-4bf5-8574-ef82e04be7b4";
@@ -64,10 +59,10 @@ pipeline {
                         reportBuildPolicy: 'ALWAYS',
                         results: [[path: 'target/allure-results']]
                     ])
-                    sendSuccessNoti(teams_connectors_url)
+                    sendTeamsNoti(teams_connectors_url)
                 }
                 failure {
-                    sendFailureNoti(teams_connectors_url)
+                    sendTeamsNoti(teams_connectors_url)
                 }
             }
         }

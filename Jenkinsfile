@@ -67,7 +67,7 @@ pipeline {
                     $class: 'XrayImportBuilder',
                     endpointName: '/cucumber',
                     projectKey: 'SCRUM',
-                    importFilePath: 'target/cucumber/cucumber.html',
+                    importFilePath: 'target/cucumber/cucumber.json',
                     serverInstance: '96c7bf87-ad73-4a77-9264-9a3b93a0903e'
                 ])
             }

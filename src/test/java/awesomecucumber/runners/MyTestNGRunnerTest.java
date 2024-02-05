@@ -6,13 +6,12 @@ import org.testng.annotations.DataProvider;
 
 @CucumberOptions(
 		plugin = {
-				"json:target/cucumber-report/cucumber.json",
-				"html:target/cucumber/cucumber.html" ,
-				"me.jvt.cucumber.report.PrettyReports:target/cucumber/"
+				"json:target/cucumber/cucumber.json",
+				"html:target/cucumber/cucumber.html"
 		},
 		 glue = {"awesomecucumber.customtype", "awesomecucumber.stepdefinitions", "awesomecucumber.hooks"},
 		features = "src/test/resources/features",
-		tags = "main"
+		tags = "@main"
 )
 public class MyTestNGRunnerTest extends AbstractTestNGCucumberTests {
 	@Override

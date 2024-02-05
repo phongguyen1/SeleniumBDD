@@ -4,7 +4,7 @@
 Feature: A description
 
 #    Radio button
-  @main
+  @main @SCRUM-24
     Scenario Outline: Click Radio Button
       Given Go to Radio Button Page
       When Click "<radio_button_value>"

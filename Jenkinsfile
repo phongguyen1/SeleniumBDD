@@ -73,19 +73,19 @@ pipeline {
                 }
             }
         }
-        stage('Publish to Xray') {
-            steps {
-                withCredentials([usernamePassword(credentialsId: '994B835F0D85469495970CEFF61B9BE6', usernameVariable: 'XRAY_CLIENT_ID', passwordVariable: 'XRAY_CLIENT_SECRET')]) {
-
-                }
-                script {
-                    if (isUnix()) {
-                        sh 'curl -H "Content-Type: application/xml" -X POST -u $XRAY_CLIENT_ID:$XRAY_CLIENT_SECRET --data @target/surefire-reports/TEST-com.mycompany.myproject.MyTest.xml "https://xray.cloud.xpand-it.com/api/v1/import/execution/junit?projectKey=MYPROJECT"'
-                    } else {
-                        bat 'curl -H "Content-Type: application/xml" -X POST -u %XRAY_CLIENT_ID%:%XRAY_CLIENT_SECRET% --data @target\\surefire-reports\\TEST-com.mycompany.myproject.MyTest.xml "https://xray.cloud.xpand-it.com/api/v1/import/execution/junit?projectKey=MYPROJECT"'
-                    }
-                }
-            }
-        }
+//         stage('Publish to Xray') {
+//             steps {
+//                 withCredentials([usernamePassword(credentialsId: '994B835F0D85469495970CEFF61B9BE6', usernameVariable: 'XRAY_CLIENT_ID', passwordVariable: 'XRAY_CLIENT_SECRET')]) {
+//
+//                 }
+//                 script {
+//                     if (isUnix()) {
+//                         sh 'curl -H "Content-Type: application/xml" -X POST -u $XRAY_CLIENT_ID:$XRAY_CLIENT_SECRET --data @target/surefire-reports/TEST-com.mycompany.myproject.MyTest.xml "https://xray.cloud.xpand-it.com/api/v1/import/execution/junit?projectKey=MYPROJECT"'
+//                     } else {
+//                         bat 'curl -H "Content-Type: application/xml" -X POST -u %XRAY_CLIENT_ID%:%XRAY_CLIENT_SECRET% --data @target\\surefire-reports\\TEST-com.mycompany.myproject.MyTest.xml "https://xray.cloud.xpand-it.com/api/v1/import/execution/junit?projectKey=MYPROJECT"'
+//                     }
+//                 }
+//             }
+//         }
     }
 }

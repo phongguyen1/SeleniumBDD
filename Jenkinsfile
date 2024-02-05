@@ -27,11 +27,14 @@ pipeline {
             }
         }
         stage('Export feature files') {
-                    step([$class: 'XrayImportFeatureBuilder',
+            steps{
+                step([$class: 'XrayImportFeatureBuilder',
                         folderPath: 'src/test/resources/features',
                         projectKey: 'SCRUM',
                         serverInstance: '96c7bf87-ad73-4a77-9264-9a3b93a0903e'])
                 }
+            }
+                    
         stage('Test') {
             steps {
                 script {

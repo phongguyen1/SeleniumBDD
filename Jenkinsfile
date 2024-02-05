@@ -34,6 +34,8 @@ pipeline {
         stage('Test') {
             steps {
                 script {
+                    echo "Branch name: ${env.BRANCH_NAME}"
+                    echo "Is Unix: ${isUnix()}"
                     if (isUnix()) {
                         if (env.BRANCH_NAME == 'dev') {
                             sh 'mvn test -Dcucumber.filter.tags=@dev -Dwebdriver.driver=chrome'

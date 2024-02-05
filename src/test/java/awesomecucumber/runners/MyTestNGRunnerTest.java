@@ -6,6 +6,7 @@ import org.testng.annotations.DataProvider;
 
 @CucumberOptions(
 		plugin = {
+				"json:target/cucumber-report/cucumber.json",
 				"html:target/cucumber/cucumber.html" ,
 				"me.jvt.cucumber.report.PrettyReports:target/cucumber/"
 		},

@@ -19,6 +19,9 @@ import io.cucumber.java.*;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Optional;
+
+import java.util.List;
 
 import static awesomecucumber.constants.FrameworkConstants.*;
 
@@ -26,39 +29,32 @@ public class MyHooks {
 
 	private WebDriver driver;
 	private final TestContext context;
+	List<WebDriver> webDriverList;
+	private int numberOfBrowsers = 1;
 
 	/**
 	 * Dependency Injection using Pico container
 	 */
-	public MyHooks(TestContext context) {
+	public MyHooks(TestContext context, @Optional Integer nOB) {
 		this.context = context;
+		this.numberOfBrowsers = nOB != null ? nOB : 1;
 	}
 
 	@Before
 	public void before(Scenario scenario) {
-
-		// ExtentReport.createTest(scenario.getName());
-
 		System.out.println(
 				"BEFORE: THREAD ID : " + Thread.currentThread().getId() + "," + "SCENARIO NAME: " + scenario.getName());
 
-		/*
-		 * System.getProperty("browser" -> This is for test execution using Maven
-		 * Command Line file
-		 */
-		/*
-		 * Setting Edge browser as default
-		 */
-//		driver = DriverFactory.initializeDriver(System.getProperty("browser", "edge"));
-//		driver = DriverFactory.initializeDriver(System.getProperty(PARAMETER_BROWSER, BROWSER_CHROME));
-		 driver = DriverFactory.initializeDriver(System.getProperty(PARAMETER_BROWSER, BROWSER_FIREFOX));
-//		driver = DriverFactory.initializeDriver(System.getProperty(PARAMETER_BROWSER, BROWSER_EDGE));
-		// driver = DriverFactory.initializeDriver(System.getProperty(PARAMETER_BROWSER,
-		// BROWSER_OPERA));
-		// driver = DriverFactory.initializeDriver(System.getProperty(PARAMETER_BROWSER,
-		// BROWSER_SAFARI));
+		if (numberOfBrowsers == 1) {
+			driver = DriverFactory.initializeDriver(System.getProperty(PARAMETER_BROWSER, BROWSER_FIREFOX));
+			context.driver = driver;
 
-		context.driver = driver;
+		} else {
+			for (int i = 0; i < numberOfBrowsers; i++) {
+				webDriverList.add(DriverFactory.initializeDriver(System.getProperty(PARAMETER_BROWSER, BROWSER_FIREFOX)));
+			}
+			context.webDriverList = webDriverList;
+		}
 	}
 
 	@After
@@ -74,8 +70,14 @@ public class MyHooks {
 		}
 
 		// doExtentReportWork(scenario);
-
-		driver.quit();
+		if (numberOfBrowsers == 1) {
+			driver.quit();
+		} else {
+			for (int i = 0; i < numberOfBrowsers; i++) {
+				webDriverList.get(numberOfBrowsers).quit();
+			}
+		}
+		numberOfBrowsers = 1;
 	}
 
 //	private void doExtentReportWork(Scenario scenario) {

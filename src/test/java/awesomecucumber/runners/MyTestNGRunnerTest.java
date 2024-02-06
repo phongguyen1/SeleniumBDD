@@ -11,7 +11,7 @@ import org.testng.annotations.DataProvider;
 		},
 		 glue = {"awesomecucumber.customtype", "awesomecucumber.stepdefinitions", "awesomecucumber.hooks"},
 		features = "src/test/resources/features",
-		tags = "@main"
+		tags = "@concurrentWeb"
 )
 public class MyTestNGRunnerTest extends AbstractTestNGCucumberTests {
 	@Override

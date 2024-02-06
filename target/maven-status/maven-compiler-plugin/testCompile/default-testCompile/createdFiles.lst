@@ -10,6 +10,7 @@ awesomecucumber\pages\bookstore\BookDetailPage.class
 awesomecucumber\hooks\MyHooks.class
 awesomecucumber\pages\SortablePage.class
 awesomecucumber\apis\CartApi.class
+awesomecucumber\pages\concurrentWeb\FirstPage.class
 awesomecucumber\utils\ConfigLoader$1.class
 awesomecucumber\pages\BasePage.class
 awesomecucumber\stepdefinitions\CheckboxDefinitions.class
@@ -26,6 +27,7 @@ awesomecucumber\pages\ResizablePage.class
 awesomecucumber\domainobjects\ProductList.class
 awesomecucumber\stepdefinitions\FramesDefinitions.class
 awesomecucumber\stepdefinitions\CartStepDefinitions.class
+awesomecucumber\stepdefinitions\concurrentWeb\ConcurrentWebDefinitions.class
 awesomecucumber\stepdefinitions\DroppableDefinitions.class
 awesomecucumber\pages\ProductPage.class
 awesomecucumber\pages\ProgressBarPage.class
@@ -66,6 +68,7 @@ awesomecucumber\pages\bookstore\LoginPage.class
 awesomecucumber\constants\FrameworkConstants.class
 awesomecucumber\domainobjects\Student.class
 awesomecucumber\stepdefinitions\ProgressBarDefinitions.class
+awesomecucumber\pages\concurrentWeb\SecondPage.class
 awesomecucumber\pages\CheckoutPage.class
 awesomecucumber\stepdefinitions\AccordianDefinitions.class
 awesomecucumber\pages\NestedFramesPage.class

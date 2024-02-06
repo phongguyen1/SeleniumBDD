@@ -16,9 +16,9 @@ import awesomecucumber.pages.*;
 import awesomecucumber.pages.bookstore.BookDetailPage;
 import awesomecucumber.pages.bookstore.BooksPage;
 import awesomecucumber.pages.bookstore.LoginPage;
+import awesomecucumber.pages.concurrentWeb.FirstPage;
+import awesomecucumber.pages.concurrentWeb.SecondPage;
 import org.openqa.selenium.WebDriver;
-
-import java.util.Date;
 
 public class PageFactoryManager {
 
@@ -56,6 +56,14 @@ public class PageFactoryManager {
 	private static LoginPage loginPage;
 	private static BooksPage booksPage;
 	private static BookDetailPage bookDetailPage;
+	private static SecondPage googlePage;
+	private static FirstPage firstPage;
+	public static SecondPage getGooglePage(WebDriver driver) {
+		return googlePage == null ? new SecondPage(driver) : googlePage;
+	}
+	public static FirstPage getFirstPage(WebDriver driver) {
+		return firstPage == null ? new FirstPage(driver) : firstPage;
+	}
 	public static BookDetailPage getBookDetailPage(WebDriver driver) {
 		return bookDetailPage == null ? new BookDetailPage(driver) : bookDetailPage;
 	}

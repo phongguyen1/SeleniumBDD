@@ -13,6 +13,7 @@
 package awesomecucumber.context;
 
 import java.io.IOException;
+import java.util.List;
 
 import awesomecucumber.domainobjects.*;
 import org.openqa.selenium.WebDriver;
@@ -20,6 +21,7 @@ import org.openqa.selenium.WebDriver;
 import awesomecucumber.utils.JacksonUtils;
 
 public class TestContext {
+    public List<WebDriver> webDriverList;
     public WebDriver driver;
     public BillingDetails billingDetails;
     public Cookies cookies;

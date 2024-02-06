@@ -40,10 +40,12 @@ D:\Projects\SeleniumBDD\src\test\java\awesomecucumber\stepdefinitions\StoreStepD
 D:\Projects\SeleniumBDD\src\test\java\awesomecucumber\utils\XLSXUtils.java
 D:\Projects\SeleniumBDD\src\test\java\awesomecucumber\stepdefinitions\ProductStepDefinitions.java
 D:\Projects\SeleniumBDD\src\test\java\awesomecucumber\apis\SpecBuilder.java
+D:\Projects\SeleniumBDD\src\test\java\awesomecucumber\pages\concurrentWeb\SecondPage.java
 D:\Projects\SeleniumBDD\src\test\java\awesomecucumber\java_Mail_API\EmailAttachmentsSender.java
 D:\Projects\SeleniumBDD\src\test\java\awesomecucumber\pages\TabsPage.java
 D:\Projects\SeleniumBDD\src\test\java\awesomecucumber\stepdefinitions\TabsDefinitions.java
 D:\Projects\SeleniumBDD\src\test\java\awesomecucumber\stepdefinitions\AutoCompleteDefinitions.java
+D:\Projects\SeleniumBDD\src\test\java\awesomecucumber\stepdefinitions\concurrentWeb\ConcurrentWebDefinitions.java
 D:\Projects\SeleniumBDD\src\test\java\awesomecucumber\utils\PropertyUtils.java
 D:\Projects\SeleniumBDD\src\test\java\awesomecucumber\pages\AccordianPage.java
 D:\Projects\SeleniumBDD\src\test\java\awesomecucumber\stepdefinitions\SliderDefinitions.java
@@ -86,6 +88,7 @@ D:\Projects\SeleniumBDD\src\test\java\awesomecucumber\stepdefinitions\ToolTipsDe
 D:\Projects\SeleniumBDD\src\test\java\awesomecucumber\pages\AutoCompletePage.java
 D:\Projects\SeleniumBDD\src\test\java\awesomecucumber\stepdefinitions\bookstore\BooksDefinitions.java
 D:\Projects\SeleniumBDD\src\test\java\awesomecucumber\customtype\CustomDataTableType.java
+D:\Projects\SeleniumBDD\src\test\java\awesomecucumber\pages\concurrentWeb\FirstPage.java
 D:\Projects\SeleniumBDD\src\test\java\awesomecucumber\utils\JacksonUtils.java
 D:\Projects\SeleniumBDD\src\test\java\awesomecucumber\pages\RadioBtnPage.java
 D:\Projects\SeleniumBDD\src\test\java\awesomecucumber\pages\FramesPage.java
